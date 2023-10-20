@@ -1,4 +1,4 @@
-namespace MVCApp.Models
+namespace CSVReader.Models
 {
     public class ErrorViewModel
     {

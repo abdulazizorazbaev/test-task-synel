@@ -1,0 +1,42 @@
+﻿@using CSVReader.Dtos;
+@using CSVReader.Entities;
+@model Employee
+
+@{
+    <div>
+        <form asp-area="" asp-controller="home" asp-action="update" asp-route-employeeId=@Model.Id method="post">
+            <div class="mb-3">
+                <label asp-for="PayrollNumber" class="form-label">Payroll Number</label>
+                <input asp-for="PayrollNumber" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Forename" class="form-label">Forename</label>
+                <input asp-for="Forename" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Surname" class="form-label">Surname</label>
+                <input asp-for="Surname" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+                <input asp-for="DateOfBirth" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Telephone" class="form-label">Telephone</label>
+                <input asp-for="Telephone" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Mobile" class="form-label">Mobile</label>
+                <input asp-for="Mobile" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" type="email">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a type="button" asp-action="index" asp-controller="home" class="btn btn-dark">Cancel</a>
+            </div>
+        </form>
+    </div>
+}
