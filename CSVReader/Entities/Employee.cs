@@ -3,63 +3,63 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSVReader.Entities;
 
-[Table("Employees")]
+[Table("employees")]
 public class Employee
 {
     [Key]
-    [Column("Id")]
+    [Column("id")]
     public long Id { get; set; }
 
     [Required]
     [MaxLength(30)]
-    [Column("PayrollNumber")]
+    [Column("payroll_number")]
     public string PayrollNumber { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(30)]
-    [Column("Forename")]
+    [Column("forename")]
     public string Forename { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(30)]
-    [Column("Surname")]
+    [Column("surname")]
     public string Surname { get; set; } = String.Empty;
 
     [Required]
-    [Column("DateOfBirth")]
+    [Column("date_of_birth")]
     public string DateOfBirth { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(10)]
-    [Column("Telephone")]
+    [Column("telephone")]
     public string Telephone { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(10)]
-    [Column("Mobile")]
+    [Column("mobile")]
     public string Mobile { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(50)]
-    [Column("Address")]
+    [Column("address")]
     public string Address { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(50)]
-    [Column("Address2")]
+    [Column("address2")]
     public string Address2 { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(20)]
-    [Column("Postcode")]
+    [Column("postcode")]
     public string Postcode { get; set; } = String.Empty;
 
     [Required]
     [MaxLength(50)]
-    [Column("Email")]
+    [Column("email")]
     public string Email { get; set; } = String.Empty;
 
     [Required]
-    [Column("StartDate")]
+    [Column("start_date")]
     public string StartDate { get; set; } = String.Empty;
 }

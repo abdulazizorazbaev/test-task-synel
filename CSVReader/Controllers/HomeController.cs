@@ -4,7 +4,6 @@ using CSVReader.Entities;
 using LumenWorks.Framework.IO.Csv;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
-using System.Net;
 
 namespace CSVReader.Controllers;
 
