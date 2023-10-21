@@ -14,7 +14,7 @@ public class AppDbContext : DbContext
         /*string connectionString = "Server=localhost; Port=5432; Database=synel-db; User Id=postgres; Password=12345";
         optionsBuilder.UseNpgsql(connectionString);*/
 
-        string connectionString = "Host=synel-database-host; Port=5432; Database=synel-db; User Id=postgres; Password=12345";
+        string connectionString = "Host=synel-database-host; Port=5432; Database=synel-db; User Id=postgres_admin; Password=AAaa@@22";
         optionsBuilder.UseNpgsql(connectionString);
 
         //optionsBuilder.UseSqlServer(@"Server=DESKTOP-5HCBVC7\MSSQLSERVER01; Database=Synel; Trusted_Connection=true; TrustServerCertificate=true;");
