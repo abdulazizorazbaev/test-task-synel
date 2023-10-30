@@ -22,28 +22,27 @@
         if (Model != null)
         {
             //Search and Sort Area
-            <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex justify-content-between mb-4">
                 <form class="w-50 d-flex" asp-action="search" asp-controller="home" method="get">
                     <div class="w-75">
-                        <input class="form-control" name="search" type="text" placeholder="Search by surname ... " required>
+                        <input class="form-control" name="search" type="text" placeholder="Search here ... " required>
                     </div>
                     <div style="margin-left: 10px">
-                        <input type="submit" class="btn btn-primary" value="Search">
+                        <input type="submit" class="btn btn-outline-primary" value="Search" autocomplete="off">
                     </div>
                 </form>
                 <div>
                     <a type="button" class="btn btn-success" asp-area="" asp-action="sort" asp-controller="home">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
-                            <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
                         </svg>
-                        Sort
                     </a>
                 </div>
             </div>
 
             // Table of Contents
-            <table class="table table-bordered" style="max-height: 400px; overflow-y: scroll; display: inline-block">
-                <thead>
+            <table class="table table-bordered table-hover" style="max-height: 350px; overflow-y: scroll; display: inline-block">
+                <thead style="position: sticky; top: -2px; background-color: #dcdedc; text-align: center">
                     <tr>
                         <th style="font-size: 15px;" scope="col">#</th>
                         <th style="font-size: 15px;" scope="col">Payroll Number</th>
@@ -64,7 +63,7 @@
                     @{
                         foreach (var employee in Model)
                         {
-                            <tr>
+                            <tr style="text-align: center; vertical-align: middle;">
                                 <th style="font-size: 12px;" scope="row">@employee.Id</th>
                                 <td style="font-size: 12px;">@employee.PayrollNumber</td>
                                 <td style="font-size: 12px;">@employee.Forename</td>
@@ -77,23 +76,17 @@
                                 <td style="font-size: 12px;">@employee.Postcode</td>
                                 <td style="font-size: 12px;">@employee.Email</td>
                                 <td style="font-size: 12px;">@employee.StartDate</td>
-                                <td style="font-size: 15px;">
-                                    <a type="button" class="btn btn-info" asp-area="" asp-action="update" asp-controller="home" asp-route-employeeId=@employee.Id>
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#fff" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) " />
-                                                <rect fill="#fff" opacity="0.9" x="5" y="20" width="15" height="2" rx="1" />
-                                            </g>
+                                <td>
+                                    <a type="button" class="btn btn-info p-1" asp-area="" asp-action="update" asp-controller="home" asp-route-employeeId=@employee.Id>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                         </svg>
                                     </a>
-                                    <a type="button" class="btn btn-danger" asp-area="" asp-action="delete" asp-controller="home" asp-route-employeeId=@employee.Id>
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#fff" fill-rule="nonzero" />
-                                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#fff" opacity="0.9" />
-                                            </g>
+                                    <a type="button" class="btn btn-danger p-1" asp-area="" asp-action="delete" asp-controller="home" asp-route-employeeId=@employee.Id>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
                                         </svg>
                                     </a>
                                 </td>

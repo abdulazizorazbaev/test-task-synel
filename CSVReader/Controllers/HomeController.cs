@@ -4,6 +4,7 @@ using CSVReader.Entities;
 using LumenWorks.Framework.IO.Csv;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CSVReader.Controllers;
 
@@ -13,7 +14,7 @@ public class HomeController : Controller
     public ActionResult IndexAsync()
     {
         AppDbContext dbContext = new AppDbContext();
-        var employees = dbContext.Employees.ToList();
+        var employees = dbContext.Employees.OrderBy(x => x.Id).ToList();
         return View("Index",employees);
     }
 
@@ -136,7 +137,10 @@ public class HomeController : Controller
     public ActionResult SearchAsync(string search)
     {
         AppDbContext context = new AppDbContext();
-        var employees = context.Employees.Where(x => x.Surname.Contains(search)).ToList();
+        var employees = context.Employees.Where(x => x.Surname.Contains(search) || x.Forename.Contains(search) || x.Mobile.Contains(search) 
+                                                  || x.Telephone.Contains(search) || x.Address.Contains(search) || x.Address2.Contains(search)
+                                                  || x.Email.Contains(search) || x.PayrollNumber.Contains(search) || x.Postcode.Contains(search)).OrderBy(x => x.Id).ToList();
+        
         return View("Index", employees);
     }
 }
