@@ -27,7 +27,7 @@ public class Employee
 
     [Required]
     [Column("date_of_birth")]
-    public string DateOfBirth { get; set; } = String.Empty;
+    public DateOnly DateOfBirth { get; set; }
 
     [Required]
     [MaxLength(10)]
@@ -61,5 +61,5 @@ public class Employee
 
     [Required]
     [Column("start_date")]
-    public string StartDate { get; set; } = String.Empty;
+    public DateOnly StartDate { get; set; }
 }

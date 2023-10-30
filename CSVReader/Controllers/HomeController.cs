@@ -49,14 +49,14 @@ public class HomeController : Controller
                                 PayrollNumber = values[0],
                                 Forename = values[1],
                                 Surname = values[2],
-                                DateOfBirth = values[3],
+                                DateOfBirth = DateOnly.Parse(values[3]),
                                 Telephone = values[4],
                                 Mobile = values[5],
                                 Address = values[6],
                                 Address2 = values[7],
                                 Postcode = values[8],
                                 Email = values[9],
-                                StartDate = values[10]
+                                StartDate = DateOnly.Parse(values[10]),
                             };
                             dbContext.Employees.Add(employee);
 
@@ -100,7 +100,7 @@ public class HomeController : Controller
                 employee.PayrollNumber = dto.PayrollNumber;
                 employee.Forename = dto.Forename;
                 employee.Surname = dto.Surname;
-                employee.DateOfBirth = dto.DateOfBirth;
+                employee.DateOfBirth = DateOnly.Parse(dto.DateOfBirth);
                 employee.Telephone = dto.Telephone;
                 employee.Mobile = dto.Mobile;
                 employee.Email = dto.Email;
