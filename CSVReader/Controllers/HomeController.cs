@@ -4,7 +4,6 @@ using CSVReader.Entities;
 using LumenWorks.Framework.IO.Csv;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CSVReader.Controllers;
 
