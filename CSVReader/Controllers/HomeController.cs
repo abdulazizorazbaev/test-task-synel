@@ -100,14 +100,14 @@ public class HomeController : Controller
                 employee.PayrollNumber = dto.PayrollNumber;
                 employee.Forename = dto.Forename;
                 employee.Surname = dto.Surname;
-                employee.DateOfBirth = DateOnly.Parse(dto.DateOfBirth);
+                employee.DateOfBirth = dto.DateOfBirth;
                 employee.Telephone = dto.Telephone;
                 employee.Mobile = dto.Mobile;
                 employee.Email = dto.Email;
-                /*            employee.Address = dto.Address;
-                            employee.Address2 = dto.Address2;
-                            employee.Postcode = dto.Postcode;
-                            employee.StartDate = dto.StartDate;*/
+                employee.Address = dto.Address;
+                employee.Address2 = dto.Address2;
+                employee.Postcode = dto.Postcode;
+                employee.StartDate = dto.StartDate;
             }
             dbContext.SaveChanges();
             return RedirectToAction("Index", "Home", new { Area = "" });

@@ -18,7 +18,7 @@ public class EmployeeUpdateDto
     public string Surname { get; set; } = String.Empty;
 
     [Column("DateOfBirth")]
-    public string DateOfBirth { get; set; } = String.Empty;
+    public DateOnly DateOfBirth { get; set; }
 
     [Column("Telephone")]
     public string Telephone { get; set; } = String.Empty;
@@ -26,18 +26,18 @@ public class EmployeeUpdateDto
     [Column("Mobile")]
     public string Mobile { get; set; } = String.Empty;
 
-    /*[Column("Address")]
+    [Column("Address")]
     public string Address { get; set; } = String.Empty;
 
     [Column("Address2")]
     public string Address2 { get; set; } = String.Empty;
 
     [Column("Postcode")]
-    public string Postcode { get; set; } = String.Empty;*/
+    public string Postcode { get; set; } = String.Empty;
 
     [Column("Email")]
     public string Email { get; set; } = String.Empty;
 
-    /*[Column("StartDate")]
-    public string StartDate { get; set; } = String.Empty;*/
+    [Column("StartDate")]
+    public DateOnly StartDate { get; set; }
 }
